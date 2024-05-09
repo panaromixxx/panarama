@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/*! panarama v1.0.0 | (c) 2024 panaromix | свободная лицензия */
+/*! panarama v1.0.1 | (c) 2024 panaromixxx | BSD 2-Clause License */
 
 :root {
   --primary-color: #007bff;
@@ -10,7 +10,10 @@
   --danger-color: #dc3545;
   --font-family-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-family-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Courier New', monospace;
-  --border-radius: 0.25rem;
+  --border-radius: 4px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 *,
@@ -22,7 +25,7 @@
 body {
   margin: 0;
   font-family: var(--font-family-sans-serif);
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
@@ -32,23 +35,23 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   font-weight: 500;
   line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+h3 { font-size: 28px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+h6 { font-size: 16px; }
 
 .btn {
   display: inline-block;
-  padding: 0.375rem 0.75rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -85,4 +88,65 @@ h6 { font-size: 1rem; }
   border-color: var(--danger-color);
 }
 
-.
+.shadow {
+  box-shadow: var(--box-shadow);
+}
+
+.shadow-lg {
+  box-shadow: var(--box-shadow-lg);
+}
+
+.shadow-sm {
+  box-shadow: var(--box-shadow-sm);
+}
+
+.square-2:hover {
+  transition: all 2s ease-in-out;
+  border-radius: 50%;
+}
+
+/* .responsive-btn {
+  container-type: inline-size;
+} */
+
+.spinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+.ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(86,102,117);
+  border-radius: 50%;
+}
+
+.ball1 {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ball2 {
+  bottom: 0;
+  left: 0;
+}
+
+.ball3 {
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+/* @container (width < 288px) {
+  .responsive-btn > .text {
+    display: none;
+  }
+} */
